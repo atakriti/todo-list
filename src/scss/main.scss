@@ -1,0 +1,201 @@
+
+@import "./var";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+}
+.done{
+    text-decoration: line-through;
+    color: #0066ff;
+ }
+ 
+ button{
+     border: none;
+     background-color: transparent;
+     outline: none;
+ }
+ .listItem li div button{
+    &:nth-child(4){
+        display: none;
+    }
+ }
+ .cancelList{
+     background-color: red;
+     color: white;
+ }
+ .finishedItems li button:nth-child(1){
+     display: none;
+ }
+ .finishedItems li button:nth-child(4){
+    display: none;
+}
+ .yet li button:nth-child(2){
+     display: none;
+ }
+ .yet li button:nth-child(4){
+    display: none;
+}
+ .recycle li button:nth-child(n+1):nth-child(-n+3){
+     display: none;
+ }
+
+ .cancel{
+     li{
+         button{
+             &:nth-child(3){
+                 display: none;
+             }
+         }
+     }
+ }
+ .main-container{
+     border: 1px red solid;
+    .userWelcomeInput{
+        background: $bg;
+        display: flex;
+        align-items: center;
+        padding:0.2% 0.5%;
+        input{
+            background-color: transparent;
+            color: white;
+            font-size: 1vw;
+            border: none;
+            outline: none;
+            &::placeholder{
+                color: white;
+                font-size: 1vw;
+            }
+            &:nth-child(2){
+                margin-left: 2%;
+                border: 1px white solid;
+                border-radius: 50%;
+                padding: 0.8%;
+                cursor: pointer;
+                transition: 0.7s;
+                &:hover{
+                    transition: 0.7s;
+                    background-color: rgb(95, 44, 25);
+                }
+            }
+            &:nth-child(1){
+                border: 1px white solid;
+                width: 11%;
+                padding:0.7% 1%;
+                transition: 0.7s;
+                border-radius: 20px;
+                &:focus{
+                    width: 15%;
+                    transition: 0.7s;
+                    border: 1px green solid;
+                    &::placeholder{
+                        transition: 1s;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+    // ================== title ============
+    h1{
+        text-align: center;
+        font-size: 2vw;
+        margin-top: 2%;
+        span{
+            color: orangered;
+            font-size: 2vw;
+        }
+    }
+    // ================= the note ============
+    .note{
+        border: 1px red solid;
+        width: 90%;
+        margin: 0 auto;
+        // // ==================== main form container ============
+        .mainForm{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+       .all-list-container{
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+
+        .list-container,.finished-container,.waiting-container,.recycle-container{
+            border: 1px red solid;
+            margin-top: 4%;
+            width: 24%;
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 1%;
+            h2,h4,h3{
+                font-size: 1vw;
+                border: 1px black solid;
+                padding: 4% 4%;
+            border-radius: 20px;
+
+               span{
+                   width: 50%;
+                .emptyTrash{
+                    font-size: 0.8vw;
+                    border-radius: 20px;
+                    width: 100%;
+                    background-color: green;
+                    color: white;
+                    border: none;
+                    padding: 0.7% 7%;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: rgb(255, 208, 0);
+                        color: black;
+                    }
+                }
+               }
+            }
+            h3{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                // border: 1px red solid;
+            }
+            ul{
+                padding: 1%;
+                li{
+                    list-style: decimal inside;
+                    border: 1px black solid;
+                    border-radius: 20px;
+                    padding: 2% 4%;
+                    font-size: 1vw;
+                    margin-top: 4%;
+                    background-color: orangered;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    white-space: normal;
+                    div{
+                        width: 40%;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        gap: 10%;
+                        button{
+                            cursor: pointer;
+                            font-size: 1.5vw;
+                        }
+                    }
+                    span{
+                        width: 50%;
+                        word-break: break-word;
+                    }
+                    
+                }
+            }
+        }
+       }
+        
+    }
+    
+ }
