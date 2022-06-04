@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>ToDo list</title>
+</head>
+<body>
+     <div class="pop-container">
+          <div class="pop">
+               <p>Are you sure:</p>
+               <button id="yes">Yes</button>
+               <button id="no">No</button>
+          </div>
+    </div>
+    <div class="main-container">
+         <!-- ============ -->
+       
+        <!-- =========== Welcome user input ============ -->
+        <form class="userWelcomeInput">
+            <input placeholder=" Enter your name " type="text" name="user" id="userWelInput">
+            <input type="submit" value="Go!" >
+        </form>
+        <!-- =============== welcome title ====================== -->
+        <h1><span class="userWelcome"></span> Welcome to my To Do list</h1>
+      <div class="note">
+            <!-- =================== main form ================= -->
+            <form class="mainForm" >
+               <div class="mainForm-container">
+                    <input placeholder="Write your ToDo list" type="text" name="text" id="input-user">
+                    <input type="submit" value="Enter" id="submit">
+               </div>
+               <input type="button" value="Reset" id="reset">
+                
+            </form>
+          <div class="all-list-container">
+             <div class="all-list-container-parent">
+                     <!-- ============== list =========== -->
+               <div class="list-container">
+                    <h2>list: </h2>
+                    <ul class="listItem"></ul>
+               </div>
+                <!-- ============== finished ================ -->
+               <div class="finished-container">
+                    <h4>Finished:</h4>
+                    <ul class="finishedItems"></ul>
+               </div>
+                <!-- ================= Waiting ============ -->
+               <div class="waiting-container">
+                    <h3>Waiting List:</h3>
+                    <ul class="yet"></ul> 
+               </div>
+                <!-- =================== recycle Bin ==============  -->
+               <div class="recycle-container">
+                    <h3>Recycle bin: <span><button title="Clean up the Trash" class="emptyTrash">Empty The Trash</button></span></h3>
+                    <ul class="recycle"></ul>
+               </div>
+             </div>
+          </div>
+      </div>
+    </div>
+    <!-- ============== -->
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

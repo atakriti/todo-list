@@ -424,16 +424,16 @@ body .pop-container .pop button:hover {
     padding: 4% 7%;
   }
   body .main-container .userWelcomeInput {
-    padding: 4%;
+    padding: 2%;
   }
   body .main-container .userWelcomeInput input {
-    font-size: 5vw;
-  }
-  body .main-container .userWelcomeInput input::placeholder {
     font-size: 4vw;
   }
+  body .main-container .userWelcomeInput input::placeholder {
+    font-size: 3vw;
+  }
   body .main-container .userWelcomeInput input:nth-child(1) {
-    width: 70%;
+    width: 40%;
   }
   body .main-container .userWelcomeInput input:nth-child(1):focus {
     width: 50%;
@@ -452,14 +452,13 @@ body .pop-container .pop button:hover {
     margin-top: 10%;
   }
   body .main-container .note .mainForm .mainForm-container {
-    padding: 3%;
-    width: 80%;
+    width: 60%;
   }
   body .main-container .note .mainForm .mainForm-container input[type=text] {
-    font-size: 5vw;
+    font-size: 4vw;
   }
   body .main-container .note .mainForm .mainForm-container input[type=text]::placeholder {
-    font-size: 4vw;
+    font-size: 3vw;
   }
   body .main-container .note .mainForm .mainForm-container input[type=submit] {
     font-size: 3vw;
@@ -474,7 +473,7 @@ body .pop-container .pop button:hover {
     overflow-y: scroll;
   }
   body .main-container .note .all-list-container .all-list-container-parent {
-    width: 360%;
+    width: 200%;
   }
   body .main-container .note .all-list-container .all-list-container-parent .list-container,
 body .main-container .note .all-list-container .all-list-container-parent .finished-container,
@@ -494,7 +493,7 @@ body .main-container .note .all-list-container .all-list-container-parent .waiti
 body .main-container .note .all-list-container .all-list-container-parent .recycle-container h2,
 body .main-container .note .all-list-container .all-list-container-parent .recycle-container h4,
 body .main-container .note .all-list-container .all-list-container-parent .recycle-container h3 {
-    font-size: 5vw;
+    font-size: 4vw;
   }
   body .main-container .note .all-list-container .all-list-container-parent .list-container h2 span,
 body .main-container .note .all-list-container .all-list-container-parent .list-container h4 span,
@@ -523,7 +522,7 @@ body .main-container .note .all-list-container .all-list-container-parent .waiti
 body .main-container .note .all-list-container .all-list-container-parent .recycle-container h2 span .emptyTrash,
 body .main-container .note .all-list-container .all-list-container-parent .recycle-container h4 span .emptyTrash,
 body .main-container .note .all-list-container .all-list-container-parent .recycle-container h3 span .emptyTrash {
-    font-size: 5vw;
+    font-size: 3vw;
   }
   body .main-container .note .all-list-container .all-list-container-parent .list-container h3,
 body .main-container .note .all-list-container .all-list-container-parent .finished-container h3,
@@ -536,20 +535,19 @@ body .main-container .note .all-list-container .all-list-container-parent .recyc
 body .main-container .note .all-list-container .all-list-container-parent .finished-container ul li,
 body .main-container .note .all-list-container .all-list-container-parent .waiting-container ul li,
 body .main-container .note .all-list-container .all-list-container-parent .recycle-container ul li {
-    font-size: 5vw;
+    font-size: 4vw;
   }
   body .main-container .note .all-list-container .all-list-container-parent .list-container ul li div,
 body .main-container .note .all-list-container .all-list-container-parent .finished-container ul li div,
 body .main-container .note .all-list-container .all-list-container-parent .waiting-container ul li div,
 body .main-container .note .all-list-container .all-list-container-parent .recycle-container ul li div {
     width: 40%;
-    border: 1px white solid;
   }
   body .main-container .note .all-list-container .all-list-container-parent .list-container ul li div button,
 body .main-container .note .all-list-container .all-list-container-parent .finished-container ul li div button,
 body .main-container .note .all-list-container .all-list-container-parent .waiting-container ul li div button,
 body .main-container .note .all-list-container .all-list-container-parent .recycle-container ul li div button {
-    font-size: 5vw;
+    font-size: 3vw;
   }
 }
 

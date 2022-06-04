@@ -396,14 +396,14 @@ body {
     // ============================ user input =================
     .main-container {
       .userWelcomeInput {
-        padding: 2%;
+        padding: 4%;
         input {
-          font-size: $fs-4;
+          font-size: $fs-5;
           &::placeholder {
-            font-size: $fs-3;
+            font-size: $fs-4;
           }
           &:nth-child(1) {
-            width: 40%;
+            width: 70%;
             &:focus {
               width: 50%;
             }
@@ -426,11 +426,12 @@ body {
         margin-top: 10%;
         .mainForm {
           .mainForm-container {
-            width: 60%;
+            padding: 3%;
+            width: 80%;
             input[type="text"] {
-              font-size: $fs-4;
+              font-size: $fs-5;
               &::placeholder {
-                font-size: $fs-3;
+                font-size: $fs-4;
               }
             }
             input[type="submit"] {
@@ -448,7 +449,7 @@ body {
           white-space: nowrap;
          overflow-y: scroll;
          .all-list-container-parent{
-            width: 200%;
+            width: 360%;
             .list-container,
             .finished-container,
             .waiting-container,
@@ -458,13 +459,13 @@ body {
                 h2,
                 h4,
                 h3{
-                    font-size: $fs-4;
+                    font-size: $fs-5;
                    
                     span{
                         margin-top: 2%;
                         width: 90%;
                         .emptyTrash{
-                            font-size: $fs-3;
+                            font-size: $fs-5;
                         }
                     }
                 }
@@ -474,11 +475,12 @@ body {
                 }
                 ul{
                     li{
-                        font-size: $fs-4;
+                        font-size: $fs-5;
                         div{
                             width: 40%;
+                            border: 1px white solid;
                             button{
-                                font-size: $fs-3;
+                                font-size: $fs-5;
                             }
                         }
                     }
