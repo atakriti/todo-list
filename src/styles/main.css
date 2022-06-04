@@ -543,7 +543,6 @@ body .main-container .note .all-list-container .all-list-container-parent .finis
 body .main-container .note .all-list-container .all-list-container-parent .waiting-container ul li div,
 body .main-container .note .all-list-container .all-list-container-parent .recycle-container ul li div {
     width: 40%;
-    border: 1px white solid;
   }
   body .main-container .note .all-list-container .all-list-container-parent .list-container ul li div button,
 body .main-container .note .all-list-container .all-list-container-parent .finished-container ul li div button,
