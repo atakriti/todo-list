@@ -118,10 +118,18 @@ body {
         cursor: pointer;
         transition: 0.7s;
         font-size: $fs-2;
+       &:nth-child(3){
         &:hover {
           transition: 0.7s;
           background-color: red;
         }
+       }
+       &:nth-child(2){
+        &:hover {
+          transition: 0.7s;
+          background-color: greenyellow;
+        }
+       }
       }
     }
   }
@@ -383,13 +391,22 @@ body {
   body {
     // ========================== pop =============
     .pop-container {
+      left: 5%;
+      width: 90vw;
+      min-height: 50vw;
+      padding: 6% 0;
       .pop {
+        line-height: 4;
+        display: flex;
+        flex-direction: column;
+
         p {
-          font-size: $fs-4;
+          font-size: $fs-5;
         }
         button {
           font-size: $fs-4;
-          padding: 4% 7%;
+          padding: 4% 20%;
+          margin: 5% 0;
         }
       }
     }
