@@ -8,7 +8,17 @@
 
 .done {
   text-decoration: line-through;
-  color: #0066ff;
+  color: white;
+  background-color: green !important;
+}
+
+.wainting {
+  background-color: rgb(255, 217, 0) !important;
+}
+
+.recycleBg {
+  background-color: rgb(49, 33, 33) !important;
+  color: white;
 }
 
 button {
@@ -26,11 +36,19 @@ button {
   color: white;
 }
 
+.listItem li button:nth-child(5) {
+  display: none;
+}
+
 .finishedItems li button:nth-child(1) {
   display: none;
 }
 
 .finishedItems li button:nth-child(4) {
+  display: none;
+}
+
+.finishedItems li button:nth-child(5) {
   display: none;
 }
 
@@ -42,6 +60,10 @@ button {
   display: none;
 }
 
+.yet li button:nth-child(5) {
+  display: none;
+}
+
 .recycle li button:nth-child(n+1):nth-child(-n+3) {
   display: none;
 }
@@ -50,11 +72,64 @@ button {
   display: none;
 }
 
-.main-container {
-  border: 1px red solid;
+.darkBg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.692);
 }
+
+body {
+  background-image: url(../images/idea-g7140a8bcc_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body .pop-container {
+  border: 2px black solid;
+  position: absolute;
+  background: linear-gradient(to right, rgb(155, 50, 12), rgb(155, 50, 12), rgba(155, 50, 12, 0.493));
+  border-radius: 20px;
+  z-index: 3;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  min-height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 10px rgb(138, 131, 131);
+}
+body .pop-container .pop {
+  text-align: center;
+  width: 80%;
+  line-height: 2;
+}
+body .pop-container .pop p {
+  color: white;
+  font-weight: bold;
+  font-size: 3vw;
+}
+body .pop-container .pop button {
+  background-color: rgb(7, 123, 255);
+  padding: 2% 5%;
+  border-radius: 20px;
+  box-shadow: inset 2px 2px 7px white;
+  color: white;
+  cursor: pointer;
+  transition: 0.7s;
+}
+body .pop-container .pop button:hover {
+  transition: 0.7s;
+  background-color: red;
+}
+
 .main-container .userWelcomeInput {
-  background: linear-gradient(to right, orangered, orangered, rgb(240, 240, 240));
+  background: linear-gradient(to right, rgb(155, 50, 12), rgb(155, 50, 12), rgba(155, 50, 12, 0.493));
   display: flex;
   align-items: center;
   padding: 0.2% 0.5%;
@@ -100,45 +175,144 @@ button {
 }
 .main-container h1 {
   text-align: center;
-  font-size: 2vw;
+  font-size: 4vw;
   margin-top: 2%;
+  color: white;
 }
 .main-container h1 span {
   color: orangered;
-  font-size: 2vw;
+  font-size: 4vw;
 }
 .main-container .note {
-  border: 1px red solid;
   width: 90%;
-  margin: 0 auto;
+  margin: 2% auto;
 }
 .main-container .note .mainForm {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: linear-gradient(to right, rgb(155, 50, 12), rgb(155, 50, 12), rgba(155, 50, 12, 0.493));
+  padding: 1% 2%;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px black;
+}
+.main-container .note .mainForm .mainForm-container {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-container .note .mainForm .mainForm-container input[type=text] {
+  background-color: transparent;
+  border: 1px white solid;
+  outline: none;
+  border-radius: 20px;
+  padding: 2% 2.2%;
+  color: white;
+  font-size: 1vw;
+  width: 75%;
+  transition: 0.7s;
+}
+.main-container .note .mainForm .mainForm-container input[type=text]::placeholder {
+  color: white;
+  font-size: 1vw;
+}
+.main-container .note .mainForm .mainForm-container input[type=text]:focus {
+  width: 87%;
+  transition: 0.7s;
+  border: skyblue 1px solid;
+}
+.main-container .note .mainForm .mainForm-container input[type=submit] {
+  background-color: transparent;
+  border: 1px white solid;
+  outline: none;
+  border-radius: 50%;
+  padding: 3% 1%;
+  font-size: 1vw;
+  color: white;
+  cursor: pointer;
+  transition: 0.7s;
+}
+.main-container .note .mainForm .mainForm-container input[type=submit]:hover {
+  background-color: skyblue;
+  transition: 0.7s;
+}
+.main-container .note .mainForm input[type=button] {
+  background-color: red;
+  border: none;
+  outline: none;
+  padding: 1%;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 0.7s;
+  font-size: 1vw;
+}
+.main-container .note .mainForm input[type=button]:hover {
+  background-color: darkred;
+  transition: 0.7s;
 }
 .main-container .note .all-list-container {
   display: flex;
   justify-content: space-between;
 }
-.main-container .note .all-list-container .list-container, .main-container .note .all-list-container .finished-container, .main-container .note .all-list-container .waiting-container, .main-container .note .all-list-container .recycle-container {
-  border: 1px red solid;
+.main-container .note .all-list-container .list-container,
+.main-container .note .all-list-container .finished-container,
+.main-container .note .all-list-container .waiting-container,
+.main-container .note .all-list-container .recycle-container {
   margin-top: 4%;
   width: 24%;
   border-radius: 20px;
   overflow: hidden;
   padding: 1%;
+  background-image: url(../images/notebg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 2px 2px 10px black;
 }
-.main-container .note .all-list-container .list-container h2, .main-container .note .all-list-container .list-container h4, .main-container .note .all-list-container .list-container h3, .main-container .note .all-list-container .finished-container h2, .main-container .note .all-list-container .finished-container h4, .main-container .note .all-list-container .finished-container h3, .main-container .note .all-list-container .waiting-container h2, .main-container .note .all-list-container .waiting-container h4, .main-container .note .all-list-container .waiting-container h3, .main-container .note .all-list-container .recycle-container h2, .main-container .note .all-list-container .recycle-container h4, .main-container .note .all-list-container .recycle-container h3 {
+.main-container .note .all-list-container .list-container h2,
+.main-container .note .all-list-container .list-container h4,
+.main-container .note .all-list-container .list-container h3,
+.main-container .note .all-list-container .finished-container h2,
+.main-container .note .all-list-container .finished-container h4,
+.main-container .note .all-list-container .finished-container h3,
+.main-container .note .all-list-container .waiting-container h2,
+.main-container .note .all-list-container .waiting-container h4,
+.main-container .note .all-list-container .waiting-container h3,
+.main-container .note .all-list-container .recycle-container h2,
+.main-container .note .all-list-container .recycle-container h4,
+.main-container .note .all-list-container .recycle-container h3 {
   font-size: 1vw;
   border: 1px black solid;
   padding: 4% 4%;
   border-radius: 20px;
 }
-.main-container .note .all-list-container .list-container h2 span, .main-container .note .all-list-container .list-container h4 span, .main-container .note .all-list-container .list-container h3 span, .main-container .note .all-list-container .finished-container h2 span, .main-container .note .all-list-container .finished-container h4 span, .main-container .note .all-list-container .finished-container h3 span, .main-container .note .all-list-container .waiting-container h2 span, .main-container .note .all-list-container .waiting-container h4 span, .main-container .note .all-list-container .waiting-container h3 span, .main-container .note .all-list-container .recycle-container h2 span, .main-container .note .all-list-container .recycle-container h4 span, .main-container .note .all-list-container .recycle-container h3 span {
+.main-container .note .all-list-container .list-container h2 span,
+.main-container .note .all-list-container .list-container h4 span,
+.main-container .note .all-list-container .list-container h3 span,
+.main-container .note .all-list-container .finished-container h2 span,
+.main-container .note .all-list-container .finished-container h4 span,
+.main-container .note .all-list-container .finished-container h3 span,
+.main-container .note .all-list-container .waiting-container h2 span,
+.main-container .note .all-list-container .waiting-container h4 span,
+.main-container .note .all-list-container .waiting-container h3 span,
+.main-container .note .all-list-container .recycle-container h2 span,
+.main-container .note .all-list-container .recycle-container h4 span,
+.main-container .note .all-list-container .recycle-container h3 span {
   width: 50%;
 }
-.main-container .note .all-list-container .list-container h2 span .emptyTrash, .main-container .note .all-list-container .list-container h4 span .emptyTrash, .main-container .note .all-list-container .list-container h3 span .emptyTrash, .main-container .note .all-list-container .finished-container h2 span .emptyTrash, .main-container .note .all-list-container .finished-container h4 span .emptyTrash, .main-container .note .all-list-container .finished-container h3 span .emptyTrash, .main-container .note .all-list-container .waiting-container h2 span .emptyTrash, .main-container .note .all-list-container .waiting-container h4 span .emptyTrash, .main-container .note .all-list-container .waiting-container h3 span .emptyTrash, .main-container .note .all-list-container .recycle-container h2 span .emptyTrash, .main-container .note .all-list-container .recycle-container h4 span .emptyTrash, .main-container .note .all-list-container .recycle-container h3 span .emptyTrash {
+.main-container .note .all-list-container .list-container h2 span .emptyTrash,
+.main-container .note .all-list-container .list-container h4 span .emptyTrash,
+.main-container .note .all-list-container .list-container h3 span .emptyTrash,
+.main-container .note .all-list-container .finished-container h2 span .emptyTrash,
+.main-container .note .all-list-container .finished-container h4 span .emptyTrash,
+.main-container .note .all-list-container .finished-container h3 span .emptyTrash,
+.main-container .note .all-list-container .waiting-container h2 span .emptyTrash,
+.main-container .note .all-list-container .waiting-container h4 span .emptyTrash,
+.main-container .note .all-list-container .waiting-container h3 span .emptyTrash,
+.main-container .note .all-list-container .recycle-container h2 span .emptyTrash,
+.main-container .note .all-list-container .recycle-container h4 span .emptyTrash,
+.main-container .note .all-list-container .recycle-container h3 span .emptyTrash {
   font-size: 0.8vw;
   border-radius: 20px;
   width: 100%;
@@ -148,19 +322,39 @@ button {
   padding: 0.7% 7%;
   cursor: pointer;
 }
-.main-container .note .all-list-container .list-container h2 span .emptyTrash:hover, .main-container .note .all-list-container .list-container h4 span .emptyTrash:hover, .main-container .note .all-list-container .list-container h3 span .emptyTrash:hover, .main-container .note .all-list-container .finished-container h2 span .emptyTrash:hover, .main-container .note .all-list-container .finished-container h4 span .emptyTrash:hover, .main-container .note .all-list-container .finished-container h3 span .emptyTrash:hover, .main-container .note .all-list-container .waiting-container h2 span .emptyTrash:hover, .main-container .note .all-list-container .waiting-container h4 span .emptyTrash:hover, .main-container .note .all-list-container .waiting-container h3 span .emptyTrash:hover, .main-container .note .all-list-container .recycle-container h2 span .emptyTrash:hover, .main-container .note .all-list-container .recycle-container h4 span .emptyTrash:hover, .main-container .note .all-list-container .recycle-container h3 span .emptyTrash:hover {
+.main-container .note .all-list-container .list-container h2 span .emptyTrash:hover,
+.main-container .note .all-list-container .list-container h4 span .emptyTrash:hover,
+.main-container .note .all-list-container .list-container h3 span .emptyTrash:hover,
+.main-container .note .all-list-container .finished-container h2 span .emptyTrash:hover,
+.main-container .note .all-list-container .finished-container h4 span .emptyTrash:hover,
+.main-container .note .all-list-container .finished-container h3 span .emptyTrash:hover,
+.main-container .note .all-list-container .waiting-container h2 span .emptyTrash:hover,
+.main-container .note .all-list-container .waiting-container h4 span .emptyTrash:hover,
+.main-container .note .all-list-container .waiting-container h3 span .emptyTrash:hover,
+.main-container .note .all-list-container .recycle-container h2 span .emptyTrash:hover,
+.main-container .note .all-list-container .recycle-container h4 span .emptyTrash:hover,
+.main-container .note .all-list-container .recycle-container h3 span .emptyTrash:hover {
   background-color: rgb(255, 208, 0);
   color: black;
 }
-.main-container .note .all-list-container .list-container h3, .main-container .note .all-list-container .finished-container h3, .main-container .note .all-list-container .waiting-container h3, .main-container .note .all-list-container .recycle-container h3 {
+.main-container .note .all-list-container .list-container h3,
+.main-container .note .all-list-container .finished-container h3,
+.main-container .note .all-list-container .waiting-container h3,
+.main-container .note .all-list-container .recycle-container h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.main-container .note .all-list-container .list-container ul, .main-container .note .all-list-container .finished-container ul, .main-container .note .all-list-container .waiting-container ul, .main-container .note .all-list-container .recycle-container ul {
+.main-container .note .all-list-container .list-container ul,
+.main-container .note .all-list-container .finished-container ul,
+.main-container .note .all-list-container .waiting-container ul,
+.main-container .note .all-list-container .recycle-container ul {
   padding: 1%;
 }
-.main-container .note .all-list-container .list-container ul li, .main-container .note .all-list-container .finished-container ul li, .main-container .note .all-list-container .waiting-container ul li, .main-container .note .all-list-container .recycle-container ul li {
+.main-container .note .all-list-container .list-container ul li,
+.main-container .note .all-list-container .finished-container ul li,
+.main-container .note .all-list-container .waiting-container ul li,
+.main-container .note .all-list-container .recycle-container ul li {
   list-style: decimal inside;
   border: 1px black solid;
   border-radius: 20px;
@@ -173,20 +367,52 @@ button {
   align-items: center;
   white-space: normal;
 }
-.main-container .note .all-list-container .list-container ul li div, .main-container .note .all-list-container .finished-container ul li div, .main-container .note .all-list-container .waiting-container ul li div, .main-container .note .all-list-container .recycle-container ul li div {
+.main-container .note .all-list-container .list-container ul li div,
+.main-container .note .all-list-container .finished-container ul li div,
+.main-container .note .all-list-container .waiting-container ul li div,
+.main-container .note .all-list-container .recycle-container ul li div {
   width: 40%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 10%;
 }
-.main-container .note .all-list-container .list-container ul li div button, .main-container .note .all-list-container .finished-container ul li div button, .main-container .note .all-list-container .waiting-container ul li div button, .main-container .note .all-list-container .recycle-container ul li div button {
+.main-container .note .all-list-container .list-container ul li div button,
+.main-container .note .all-list-container .finished-container ul li div button,
+.main-container .note .all-list-container .waiting-container ul li div button,
+.main-container .note .all-list-container .recycle-container ul li div button {
   cursor: pointer;
-  font-size: 1.5vw;
+  font-size: 1vw;
 }
-.main-container .note .all-list-container .list-container ul li span, .main-container .note .all-list-container .finished-container ul li span, .main-container .note .all-list-container .waiting-container ul li span, .main-container .note .all-list-container .recycle-container ul li span {
+.main-container .note .all-list-container .list-container ul li span,
+.main-container .note .all-list-container .finished-container ul li span,
+.main-container .note .all-list-container .waiting-container ul li span,
+.main-container .note .all-list-container .recycle-container ul li span {
   width: 50%;
   word-break: break-word;
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes popDown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
