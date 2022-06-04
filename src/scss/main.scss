@@ -85,7 +85,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
+  // ======================================= pop =================
   .pop-container {
     border: 2px black solid;
     position: absolute;
@@ -94,8 +94,8 @@ body {
     z-index: 3;
     top: 25%;
     left: 25%;
-    width: 50%;
-    min-height: 50%;
+    width: 50vw;
+    min-height: 30vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +107,7 @@ body {
       p {
         color: white;
         font-weight: bold;
-        font-size:$fs-3;
+        font-size: $fs-3;
       }
       button {
         background-color: rgb(7, 123, 255);
@@ -117,7 +117,7 @@ body {
         color: white;
         cursor: pointer;
         transition: 0.7s;
-
+        font-size: $fs-2;
         &:hover {
           transition: 0.7s;
           background-color: red;
@@ -126,7 +126,9 @@ body {
     }
   }
 }
+// ======================= main container ===================
 .main-container {
+  // ================================ Welcome user input =============
   .userWelcomeInput {
     background: $bg;
     display: flex;
@@ -256,88 +258,92 @@ body {
         }
       }
     }
+    // ====================== All list container ====================
     .all-list-container {
-      display: flex;
-      justify-content: space-between;
+      
       // align-items: center;
-
-      .list-container,
-      .finished-container,
-      .waiting-container,
-      .recycle-container {
-        margin-top: 4%;
-        width: 24%;
-        border-radius: 20px;
-        overflow: hidden;
-        padding: 1%;
-        background-image: url(../images/notebg.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        box-shadow: 2px 2px 10px black;
-        h2,
-        h4,
-        h3 {
-          font-size: $fs-1;
-          border: 1px black solid;
-          padding: 4% 4%;
-          border-radius: 20px;
-
-          span {
-            width: 50%;
-            .emptyTrash {
-              font-size:$fs-08;
-              border-radius: 20px;
-              width: 100%;
-              background-color: green;
-              color: white;
-              border: none;
-              padding: 0.7% 7%;
-              cursor: pointer;
-              &:hover {
-                background-color: rgb(255, 208, 0);
-                color: black;
-              }
-            }
-          }
-        }
-        h3 {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          // border: 1px red solid;
-        }
-        ul {
-          padding: 1%;
-          li {
-            list-style: decimal inside;
-            border: 1px black solid;
-            border-radius: 20px;
-            padding: 2% 4%;
-            font-size: $fs-1;
-            margin-top: 4%;
-            background-color: orangered;
+      // ======================================================================
+        .all-list-container-parent{
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            white-space: normal;
-            div {
-              width: 40%;
-              display: flex;
-              justify-content: flex-end;
-              align-items: center;
-              gap: 10%;
-              button {
-                cursor: pointer;
+      justify-content: space-between;
+            .list-container,
+            .finished-container,
+            .waiting-container,
+            .recycle-container {
+              margin-top: 4%;
+              width: 24%;
+              border-radius: 20px;
+              overflow: hidden;
+              padding: 1%;
+              background-image: url(../images/notebg.jpg);
+              background-size: cover;
+              background-repeat: no-repeat;
+              box-shadow: 2px 2px 10px black;
+              h2,
+              h4,
+              h3 {
                 font-size: $fs-1;
+                border: 1px black solid;
+                padding: 4% 4%;
+                border-radius: 20px;
+      
+                span {
+                  width: 50%;
+                  .emptyTrash {
+                    font-size: $fs-08;
+                    border-radius: 20px;
+                    width: 100%;
+                    background-color: green;
+                    color: white;
+                    border: none;
+                    padding: 0.7% 7%;
+                    cursor: pointer;
+                    &:hover {
+                      background-color: rgb(255, 208, 0);
+                      color: black;
+                    }
+                  }
+                }
+              }
+              h3 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                // border: 1px red solid;
+              }
+              ul {
+                padding: 1%;
+                li {
+                  list-style: decimal inside;
+                  border: 1px black solid;
+                  border-radius: 20px;
+                  padding: 2% 4%;
+                  font-size: $fs-1;
+                  margin-top: 4%;
+                  background-color: orangered;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  white-space: normal;
+                  div {
+                    width: 40%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 10%;
+                    button {
+                      cursor: pointer;
+                      font-size: $fs-1;
+                    }
+                  }
+                  span {
+                    width: 50%;
+                    word-break: break-word;
+                  }
+                }
               }
             }
-            span {
-              width: 50%;
-              word-break: break-word;
-            }
-          }
         }
-      }
     }
   }
 }
@@ -370,5 +376,117 @@ body {
   100% {
     transform: scale(0);
     opacity: 0;
+  }
+}
+// ================================================= Media query ===============
+@media only screen and (max-width: 800px) {
+  body {
+    // ========================== pop =============
+    .pop-container {
+      .pop {
+        p {
+          font-size: $fs-4;
+        }
+        button {
+          font-size: $fs-4;
+          padding: 4% 7%;
+        }
+      }
+    }
+    // ============================ user input =================
+    .main-container {
+      .userWelcomeInput {
+        padding: 2%;
+        input {
+          font-size: $fs-4;
+          &::placeholder {
+            font-size: $fs-3;
+          }
+          &:nth-child(1) {
+            width: 40%;
+            &:focus {
+              width: 50%;
+            }
+          }
+          &:nth-child(2) {
+            padding: 1.3%;
+          }
+        }
+      }
+      // ==================== title =============
+      h1 {
+        font-size: $fs-5;
+        span {
+          font-size: $fs-5;
+        }
+      }
+      // ==================== note ==============
+      .note {
+        width: 100%;
+        margin-top: 10%;
+        .mainForm {
+          .mainForm-container {
+            width: 60%;
+            input[type="text"] {
+              font-size: $fs-4;
+              &::placeholder {
+                font-size: $fs-3;
+              }
+            }
+            input[type="submit"] {
+              font-size: $fs-3;
+              padding: 4% 1.5%;
+            }
+          }
+          input[type="button"] {
+            font-size: $fs-3;
+            padding: 2%;
+          }
+        }
+        // ================= list container ================
+        .all-list-container {
+          white-space: nowrap;
+         overflow-y: scroll;
+         .all-list-container-parent{
+            width: 200%;
+            .list-container,
+            .finished-container,
+            .waiting-container,
+            .recycle-container {
+                white-space: normal;
+
+                h2,
+                h4,
+                h3{
+                    font-size: $fs-4;
+                   
+                    span{
+                        margin-top: 2%;
+                        width: 90%;
+                        .emptyTrash{
+                            font-size: $fs-3;
+                        }
+                    }
+                }
+                h3{
+                    display: flex;
+                    flex-direction: column;
+                }
+                ul{
+                    li{
+                        font-size: $fs-4;
+                        div{
+                            width: 40%;
+                            button{
+                                font-size: $fs-3;
+                            }
+                        }
+                    }
+                }
+            }
+         }
+        }
+      }
+    }
   }
 }
