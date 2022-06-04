@@ -436,7 +436,7 @@ body .pop-container .pop button:hover {
     width: 70%;
   }
   body .main-container .userWelcomeInput input:nth-child(1):focus {
-    width: 50%;
+    width: 80%;
   }
   body .main-container .userWelcomeInput input:nth-child(2) {
     padding: 1.3%;
