@@ -124,9 +124,13 @@ body .pop-container .pop button {
   transition: 0.7s;
   font-size: 2vw;
 }
-body .pop-container .pop button:hover {
+body .pop-container .pop button:nth-child(3):hover {
   transition: 0.7s;
   background-color: red;
+}
+body .pop-container .pop button:nth-child(2):hover {
+  transition: 0.7s;
+  background-color: greenyellow;
 }
 
 .main-container .userWelcomeInput {
@@ -416,12 +420,24 @@ body .pop-container .pop button:hover {
   }
 }
 @media only screen and (max-width: 800px) {
+  body .pop-container {
+    left: 5%;
+    width: 90vw;
+    min-height: 50vw;
+    padding: 6% 0;
+  }
+  body .pop-container .pop {
+    line-height: 4;
+    display: flex;
+    flex-direction: column;
+  }
   body .pop-container .pop p {
-    font-size: 4vw;
+    font-size: 5vw;
   }
   body .pop-container .pop button {
     font-size: 4vw;
-    padding: 4% 7%;
+    padding: 4% 20%;
+    margin: 5% 0;
   }
   body .main-container .userWelcomeInput {
     padding: 4%;
