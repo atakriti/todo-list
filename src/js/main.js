@@ -16,10 +16,14 @@ emptyTrash.style.display = "none";
 pop.style.transform = "scale(0)";
 // =============================================
 // =======================clock ============
-let hours = new Date().getHours();
-let minutes = new Date().getMinutes();
-let time = `${hours}:${minutes}`;
-
+// let hours = new Date().getHours();
+// let minutes = new Date().getMinutes();
+// let seconds = new Date().getSeconds()
+// let time = `${hours}:${minutes}:${seconds}`;
+// =========================== Time function ===========
+let timeFunction = () => {
+  return new Date().toLocaleTimeString()
+}
 // ============================
 let user = (e) => {
   e.preventDefault();
@@ -69,7 +73,8 @@ let user = (e) => {
     // step 6 push div to li
     li.appendChild(div);
     let sticker = document.createElement("strong") // -----------------
-    sticker.innerHTML = time // ----------------
+    sticker.innerHTML = timeFunction() // ---------------------------- Time
+    
     li.appendChild(sticker) // -----------------
     sticker.classList.add("stickerNote") // -----------------
     // =================== DONE =======================
@@ -163,3 +168,8 @@ let userWel = (e) => {
 let userWelcomeForm = document
   .querySelector(".userWelcomeInput")
   .addEventListener("submit", userWel );
+
+
+
+
+  setInterval(timeFunction,1000)

@@ -323,7 +323,6 @@ body {
               ul {
                 padding: 1%;
                 li {
-                  list-style: decimal inside;
                   border: 1px black solid;
                   border-radius: 10px;
                   padding: 10% 4% 2% 4%;
@@ -336,7 +335,7 @@ body {
                   white-space: normal;
                   position: relative;
                   animation: opacity 1s;
-                
+                  list-style:  decimal inside;                
                   div {
                     width: 40%;
                     display: flex;
