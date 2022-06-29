@@ -22,8 +22,8 @@ pop.style.transform = "scale(0)";
 // let time = `${hours}:${minutes}:${seconds}`;
 // =========================== Time function ===========
 let timeFunction = () => {
-  return new Date().toLocaleTimeString()
-}
+  return new Date().toLocaleTimeString();
+};
 // ============================
 let user = (e) => {
   e.preventDefault();
@@ -32,19 +32,16 @@ let user = (e) => {
     let li = document.createElement("li");
     let spanLi = document.createElement("span");
     let list = document.createTextNode(inputUser);
-    
     spanLi.appendChild(list);
     li.appendChild(spanLi);
     ul.appendChild(li);
-// ============= creating the timing as sticker in li
-
-
+    // ============= creating the timing as sticker in li
 
     // let clone = li.cloneNode(true)
     // ul2.appendChild(clone)
     document.querySelector("#input-user").value = "";
     // step 1 create div for btns
-   
+
     let div = document.createElement("div");
     // step 2 create btns
     let done = document.createElement("button");
@@ -72,17 +69,27 @@ let user = (e) => {
     div.appendChild(restore);
     // step 6 push div to li
     li.appendChild(div);
-    let sticker = document.createElement("strong") // -----------------
-    sticker.innerHTML = timeFunction() // ---------------------------- Time
-    
-    li.appendChild(sticker) // -----------------
-    sticker.classList.add("stickerNote") // -----------------
+    // console.log(localStorage.length)
+    // let a = "";
+    // if (localStorage.length) {
+
+    //   a = JSON.parse(localStorage.getItem("inputUser"))
+    // }
+    // localStorage.setItem("inputUser",JSON.stringify([...a, li.innerText])) // ===============
+    //! i actually added here the li because everything inside it , so my point is to take the whole li and store it and call it after that , calling in line 178
+    let listItem1 = li.innerHTML;
+    localStorage.setItem("inputUser", listItem1);
+
+    let sticker = document.createElement("strong"); // -----------------
+    sticker.innerHTML = timeFunction(); // ---------------------------- Time
+
+    li.appendChild(sticker); // -----------------
+    sticker.classList.add("stickerNote"); // -----------------
     // =================== DONE =======================
     done.addEventListener("click", () => {
       li.classList.add("done");
-      li.classList.remove("waiting")
+      li.classList.remove("waiting");
       finishedItems.appendChild(li);
-      
     });
     // =================== Remind Me =======================
     remindMe.addEventListener("click", () => {
@@ -122,7 +129,7 @@ let user = (e) => {
 
     restore.addEventListener("click", () => {
       ul.appendChild(li);
-      li.classList.remove("recycleBg")
+      li.classList.remove("recycleBg");
     });
     // =========== yes no btn ==========
     yes.addEventListener("click", () => {
@@ -151,25 +158,28 @@ let submit = document
 // ===============
 let userWelcome = document.querySelector(".userWelcome");
 let userWel = (e) => {
-  
   e.preventDefault();
   let userWelInput = document.getElementById("userWelInput").value;
   if (!userWelInput == "") {
-    
     userWelcome.innerHTML =
       userWelInput[0].toUpperCase() + userWelInput.slice(1);
-      
+
     document.getElementById("userWelInput").value = "";
   } else {
     document.getElementById("userWelInput").placeholder = "Enter your name";
   }
-  
 };
 let userWelcomeForm = document
   .querySelector(".userWelcomeInput")
-  .addEventListener("submit", userWel );
+  .addEventListener("submit", userWel);
 
+setInterval(timeFunction, 1000);
 
+window.addEventListener("load", () => {
+  localStorage.getItem("inputUser");
+  // let a = [];
+  // if (localStorage.length) {
 
-
-  setInterval(timeFunction,1000)
+  //   a = JSON.parse(localStorage.getItem("inputUser"))
+  // }
+});
